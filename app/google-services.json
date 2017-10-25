@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "462371674726",
+    "firebase_url": "https://yetgoprovidersonline.firebaseio.com",
+    "project_id": "yetgoprovidersonline",
+    "storage_bucket": "yetgoprovidersonline.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462371674726:android:169d7373797d7286",
+        "android_client_info": {
+          "package_name": "br.com.paulolinhares.yetgoprovidersonline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462371674726-4h4or47tjs457e0j6f9sualclcf8mn5b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.paulolinhares.yetgoprovidersonline",
+            "certificate_hash": "64bf8f887c343d92e944ab9ce152ad3820099a5a"
+          }
+        },
+        {
+          "client_id": "462371674726-csef8jibgr5elr54dp51egtvj8rvjbe5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxzBf3zVZOzu__JN7IY5gsqDNBC8zrIqQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462371674726-csef8jibgr5elr54dp51egtvj8rvjbe5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462371674726:android:bf76ac174d50d266",
+        "android_client_info": {
+          "package_name": "br.com.packapps.firestoreproviders"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462371674726-2juq46dkfq6b2gdmgui2igff16v16uns.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.packapps.firestoreproviders",
+            "certificate_hash": "64bf8f887c343d92e944ab9ce152ad3820099a5a"
+          }
+        },
+        {
+          "client_id": "462371674726-csef8jibgr5elr54dp51egtvj8rvjbe5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxzBf3zVZOzu__JN7IY5gsqDNBC8zrIqQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462371674726-csef8jibgr5elr54dp51egtvj8rvjbe5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
