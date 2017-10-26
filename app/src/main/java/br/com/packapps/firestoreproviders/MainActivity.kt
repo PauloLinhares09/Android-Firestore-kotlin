@@ -17,6 +17,7 @@ import kotlin.collections.HashMap
 import android.support.annotation.NonNull
 import android.util.Log
 import br.com.packapps.firestoreproviders.models.Provider
+import br.com.packapps.firestoreproviders.util.DistanceCalculator
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.firestore.DocumentSnapshot
@@ -47,7 +48,9 @@ class MainActivity : AppCompatActivity() {
 //                "type" to 18,
 //                "category" to 18)
 
-        val provider : Provider = Provider(1, "white", -1.12345, -48.12345, 18, 23)
+        val provider : Provider = Provider(1, "white", -1.4580218, -48.4968418, 18, 23)
+        //patio belem : -1.4580218, -48.4968418
+        //grao pará : -1.3904519, -48.4673761
 
         //step two: write our data
         db!!.collection("providers")
@@ -118,6 +121,10 @@ class MainActivity : AppCompatActivity() {
                                 val providerOb : Provider = document.toObject(Provider::class.java)
                                 Log.i("TAG", "providerId: " + providerOb.providerId)
                                 Log.i("TAG", "lat: " + providerOb.lat)
+
+                                //### Calculate distance
+                                val distance : Double = DistanceCalculator.distance(providerOb.lat, providerOb.long, -1.4572637, -48.501473, "K")
+                                Log.i("TAG", "distance to me: " + distance + " km")
                             }
 
                         }else{
