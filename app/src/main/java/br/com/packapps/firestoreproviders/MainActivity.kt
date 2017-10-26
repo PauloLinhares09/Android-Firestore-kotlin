@@ -16,6 +16,7 @@ import java.util.*
 import kotlin.collections.HashMap
 import android.support.annotation.NonNull
 import android.util.Log
+import br.com.packapps.firestoreproviders.models.Provider
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.firestore.DocumentSnapshot
@@ -37,14 +38,16 @@ class MainActivity : AppCompatActivity() {
         db = FirebaseFirestore.getInstance()
 
         //step two: write our data
-        var provider : HashMap<String, Any> = hashMapOf(
-                "provider_id" to 1,
-                "color" to "black",
-                "lat" to -1.54321,
-                "long" to -48.54321,
-                "location_id" to 2,
-                "type" to 18,
-                "category" to 18)
+//        var provider : HashMap<String, Any> = hashMapOf(
+//                "provider_id" to 1,
+//                "color" to "black",
+//                "lat" to -1.54321,
+//                "long" to -48.54321,
+//                "location_id" to 2,
+//                "type" to 18,
+//                "category" to 18)
+
+        val provider : Provider = Provider(1, "white", -1.12345, -48.12345, 18, 23)
 
         //step two: write our data
         db!!.collection("providers")
@@ -63,19 +66,22 @@ class MainActivity : AppCompatActivity() {
         //## Action buttom
         fab.setOnClickListener { view ->
 
-            var providerUpdate : HashMap<String, Any> = hashMapOf(
-                    "provider_id" to 1,
-                    "color" to "black",
-                    "lat" to -1.98765, //changed
-                    "long" to -48.98765, //changed
-                    "location_id" to 2,
-                    "type" to 18,
-                    "category" to 18)
+            var providerUpdate : Provider = provider
+            providerUpdate.lat = -1.54321 //changed
+            providerUpdate.long = -48.54321 //changed
+
+            //convert to HashMap
+            var providerUpdateMap : HashMap<String, Any> = hashMapOf(
+                    "lat" to providerUpdate.lat,
+                    "long" to providerUpdate.long
+                    )
+
+
 
             //Step tree: update data
             if (!myIdDocumento.isEmpty()){
                 db!!.collection("providers").document(myIdDocumento)
-                        .update(providerUpdate)
+                        .update(providerUpdateMap)
                         .addOnCompleteListener {
                             documentReference ->
                             Log.i("TAG", "update successful:" + documentReference.isSuccessful)
@@ -109,6 +115,9 @@ class MainActivity : AppCompatActivity() {
                         if (task.isSuccessful){
                             for (document : DocumentSnapshot in task.result){
                                 Log.i("TAG", "document data: " + document.data)
+                                val providerOb : Provider = document.toObject(Provider::class.java)
+                                Log.i("TAG", "providerId: " + providerOb.providerId)
+                                Log.i("TAG", "lat: " + providerOb.lat)
                             }
 
                         }else{
